@@ -190,7 +190,7 @@ class Lexer:
         self.advance()
       elif self.current_char == '//':
         self.skip_comment()
-      elif self.current_char in ';\n':
+      elif self.current_char in ',\n':
         tokens.append(Token(TT_NEWLINE, pos_start=self.pos))
         self.advance()
       elif self.current_char in DIGITS:
@@ -1210,7 +1210,7 @@ class Parser:
     if self.current_tok.type != TT_NEWLINE:
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
-        f"Diharapkan '->' atau baris baru (newline)(;)"
+        f"Diharapkan '->' atau baris baru (newline)(,)"
       ))
 
     res.register_advancement()
@@ -1595,7 +1595,7 @@ Clear for Windows -> CLS
 Clear MacOS/Linux -> CLEAR
 function -> fungsi
 finding in array -> #
-newline (baris baru) -> ;
+newline (baris baru) -> ,
 null = nol
 input -> masukan
 input integer -> masukan_int
