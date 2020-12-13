@@ -55,9 +55,10 @@ bahasa >
 
 ```
 Bahasa
-├─┬ Adapted from:
+├─┬─── Adapted from:
 │ └─── David Callanan's Basic
-└─┬    |
-  └── Python
-      └── C
+│       │
+└───── Written in:
+        └─ Python
+            └─ C
 ```
