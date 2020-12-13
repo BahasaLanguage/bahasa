@@ -4,7 +4,7 @@
 ## Installation
 
 ### Basic (no command prompt needed):
-1. Download ZIP from the **Bahasa** repo on Github (`Code -> Download ZIP)
+1. Download ZIP from the **Bahasa** repo on Github (`Code -> Download ZIP`)
 2. Open the **Bahasa** file and open the `shell.py` file on your favorite IDE (`e.g. Visual Studio Code, Python's IDLE, etc.`)
 3. Click `run` or `play`
 
