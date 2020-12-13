@@ -51,8 +51,12 @@ bahasa >
   └── …
 -->
 
-## Creation Root
+## Rules and How to Use
+| English |->|Indonesian |
+|---------|--|-----------|
+| print() |->|bilang() |
 
+## Creation Root
 ```
 Bahasa
 ├─┬─── Adapted from:
