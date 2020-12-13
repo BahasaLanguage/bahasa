@@ -3,18 +3,18 @@
 
 ## Installation
 
-Basic (no command prompt needed):
+### Basic (no command prompt needed):
 1. Download ZIP from the **Bahasa** repo on Github (`Code -> Download ZIP)
 2. Open the **Bahasa** file and open the `shell.py` file on your favorite IDE (`e.g. Visual Studio Code, Python's IDLE, etc.`)
 3. Click `run` or `play`
 
-Command Prompt:
+### Command Prompt:
 1. Go to your favorite location for the installation (`cd Desktop`)
 2. Clone **Bahasa** on Github (`git clone https://github.com/BahasaLanguage/bahasa.git`)
 3. Go to the **Bahasa** file (`cd .../bahasa/`)
 4. Run `python3` on `shell.py` (`python3 shell.py`)
 
-Result:
+### Result:
 ```
  ,ggggggggggg,                                                           
 dP"""88""""""Y8,             ,dPYb,                                      
