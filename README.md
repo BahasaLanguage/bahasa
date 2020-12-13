@@ -43,8 +43,7 @@ bahasa >
 
 ```
 Bahasa
-└──┬ Adapted from:
-   └─ David Callanan's Basic
-      └─ Python
-          └─ C
+ └─ David Callanan's Basic
+     └─ Python
+         └─ C
 ```
