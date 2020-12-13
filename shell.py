@@ -14,11 +14,13 @@ Yb,  88      `8b             IP'`Yb
     8888888888P" "Y8888P"`Y888P     `Y8P"Y8888P"`Y8P' "YY8P8PP"Y8888P"`Y8
 
 
-An Indonesian Programming Language 
-Created by Jeremy Gautama
---------------------------------------------------------------------------
-help - type 'help' for help
-bantuan - ketik 'bantuan' untuk bantuan
+Bahasa, An Indonesian Programming Language
+Copyright(c) 2020 by Jeremy Gautama
+Homepage: https://bahasalanguage.github.io/
+Github	: https://github.com/bahasalanguage
+
+help		type 'help' for help
+bantuan		ketik 'bantuan' untuk bantuan
 '''
 )
 
