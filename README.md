@@ -39,11 +39,25 @@ bantuan		ketik 'bantuan' untuk bantuan
 bahasa > 
 ```
 
+<!--
+/path/to/your/data_directory
+├─┬ attachments
+│ ├── foo.ext
+│ ├── bar.ext
+│ └── …
+└─┬ notes
+  ├── foo.md
+  ├── bar.md
+  └── …
+-->
+
 ## Creation Root
 
 ```
 Bahasa
- └─ David Callanan's Basic
-     └─ Python
-         └─ C
+├─┬ Adapted from:
+│ └─── David Callanan's Basic
+└─┬    |
+  └── Python
+      └── C
 ```
