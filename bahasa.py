@@ -1557,6 +1557,7 @@ Github	: https://github.com/bahasalanguage
 
 help		type 'help' for help
 bantuan		ketik 'bantuan' untuk bantuan
+keluar()	to quit from Bahasa/untuk keluar dari Bahasa
 '''
 )
 
@@ -1941,6 +1942,7 @@ class BuiltInFunction(BaseFunction):
   execute_run.arg_names = ["fn"]
 
 BuiltInFunction.print       = BuiltInFunction("print")
+BuiltInFunction.quit        = BuiltInFunction("quit")
 BuiltInFunction.print_ret   = BuiltInFunction("print_ret")
 BuiltInFunction.input       = BuiltInFunction("input")
 BuiltInFunction.input_int   = BuiltInFunction("input_int")
@@ -2257,7 +2259,7 @@ global_symbol_table.set("nol", Number.null)
 global_symbol_table.set("salah", Number.false)
 global_symbol_table.set("benar", Number.true)
 global_symbol_table.set("Pi", Number.math_PI)
-global_symbol_table.set("PRINT", BuiltInFunction.print)
+global_symbol_table.set("keluar", BuiltInFunction.quit)
 global_symbol_table.set("bilang", BuiltInFunction.print) #print
 global_symbol_table.set("bilang_kem", BuiltInFunction.print_ret) #print return (bilang kembali)
 global_symbol_table.set("masukan", BuiltInFunction.input) #input
