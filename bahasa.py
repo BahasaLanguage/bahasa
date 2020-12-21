@@ -1,33 +1,28 @@
-#######################################
 # IMPORTS
-#######################################
 
 from strings_with_arrows import *
-
 import string
 import os
 import math
 
-#######################################
 # CONSTANTS
-#######################################
 
-DIGITS = '0123456789'
+DIGITS = string.digits
 LETTERS = string.ascii_letters
 LETTERS_DIGITS = LETTERS + DIGITS
 
-#######################################
 # ERRORS
-#######################################
 
 class Error:
   def __init__(self, pos_start, pos_end, error_name, details):
+    """ Execption for Bahasa programming language. """
     self.pos_start = pos_start
     self.pos_end = pos_end
     self.error_name = error_name
     self.details = details
   
   def as_string(self):
+    """ Methid for convert into string. """
     result  = f'{self.error_name}: {self.details}\n'
     result += f'File {self.pos_start.fn}, baris {self.pos_start.ln + 1}'
     result += '\n\n' + string_with_arrows(self.pos_start.ftxt, self.pos_start, self.pos_end)
@@ -35,28 +30,34 @@ class Error:
 
 class IllegalCharError(Error):
   def __init__(self, pos_start, pos_end, details):
+    """ IllegalCharError """
     super().__init__(pos_start, pos_end, 'Karakter Ilegal', details) #Illegal character
 
 class ExpectedCharError(Error):
   def __init__(self, pos_start, pos_end, details):
+    """ ExpectedCharError """
     super().__init__(pos_start, pos_end, 'Karakter yang Diharapkan', details) #expected character
 
 class InvalidSyntaxError(Error):
   def __init__(self, pos_start, pos_end, details=''):
+    """ InvalidSyntaxError """
     super().__init__(pos_start, pos_end, 'Sintaks Tidak Valid', details) #invalid syntax
 
 class RTError(Error):
   def __init__(self, pos_start, pos_end, details, context):
+    """ RTError """
     super().__init__(pos_start, pos_end, 'Kesalahkan Waktu Proses', details) #runtime error
     self.context = context
 
   def as_string(self):
+    """ Methid for convert into string. """
     result  = self.generate_traceback()
     result += f'{self.error_name}: {self.details}'
     result += '\n\n' + string_with_arrows(self.pos_start.ftxt, self.pos_start, self.pos_end)
     return result
 
   def generate_traceback(self):
+    """ Methid for generating traceback. """
     result = ''
     pos = self.pos_start
     ctx = self.context
@@ -68,14 +69,13 @@ class RTError(Error):
 
     return 'Lacak balik (panggilan terakhir):\n' + result
 
-    #Traceback (most recent last call)
+    # Traceback (most recent last call)
 
-#######################################
 # POSITION
-#######################################
 
 class Position:
   def __init__(self, idx, ln, col, fn, ftxt):
+    """ Init method """
     self.idx = idx
     self.ln = ln
     self.col = col
@@ -95,9 +95,7 @@ class Position:
   def copy(self):
     return Position(self.idx, self.ln, self.col, self.fn, self.ftxt)
 
-#######################################
 # TOKENS
-#######################################
 
 TT_INT				= 'INT'
 TT_FLOAT    	= 'FLOAT'
@@ -148,6 +146,7 @@ KEYWORDS = [
 
 class Token:
   def __init__(self, type_, value=None, pos_start=None, pos_end=None):
+    """ Token(type_, value=None, pos_start=None, pos_end=None) """
     self.type = type_
     self.value = value
 
@@ -166,12 +165,11 @@ class Token:
     if self.value: return f'{self.type}:{self.value}'
     return f'{self.type}'
 
-#######################################
 # LEXER
-#######################################
 
 class Lexer:
   def __init__(self, fn, text):
+    """ Lexer(fn, text) """
     self.fn = fn
     self.text = text
     self.pos = Position(-1, 0, -1, fn, text)
@@ -366,9 +364,7 @@ class Lexer:
 
     self.advance()
 
-#######################################
 # NODES
-#######################################
 
 class NumberNode:
   def __init__(self, tok):
@@ -509,9 +505,7 @@ class BreakNode:
     self.pos_start = pos_start
     self.pos_end = pos_end
 
-#######################################
 # PARSE RESULT
-#######################################
 
 class ParseResult:
   def __init__(self):
@@ -546,9 +540,7 @@ class ParseResult:
       self.error = error
     return self
 
-#######################################
 # PARSER
-#######################################
 
 class Parser:
   def __init__(self, tokens):
@@ -578,8 +570,6 @@ class Parser:
         "Token tidak dapat muncul setelah token sebelumnya"
       ))
     return res
-
-  ###################################
 
   def statements(self):
     res = ParseResult()
@@ -1235,8 +1225,6 @@ class Parser:
       False
     ))
 
-  ###################################
-
   def bin_op(self, func_a, ops, func_b=None):
     if func_b == None:
       func_b = func_a
@@ -1255,9 +1243,7 @@ class Parser:
 
     return res.success(left)
 
-#######################################
 # RUNTIME RESULT
-#######################################
 
 class RTResult:
   def __init__(self):
@@ -1311,9 +1297,7 @@ class RTResult:
       self.loop_should_break
     )
 
-#######################################
 # VALUES
-#######################################
 
 class Value:
   def __init__(self):
@@ -1957,9 +1941,7 @@ BuiltInFunction.extend      = BuiltInFunction("extend")
 BuiltInFunction.len					= BuiltInFunction("len")
 BuiltInFunction.run					= BuiltInFunction("run")
 
-#######################################
 # CONTEXT
-#######################################
 
 class Context:
   def __init__(self, display_name, parent=None, parent_entry_pos=None):
@@ -1968,9 +1950,7 @@ class Context:
     self.parent_entry_pos = parent_entry_pos
     self.symbol_table = None
 
-#######################################
 # SYMBOL TABLE
-#######################################
 
 class SymbolTable:
   def __init__(self, parent=None):
@@ -1989,9 +1969,7 @@ class SymbolTable:
   def remove(self, name):
     del self.symbols[name]
 
-#######################################
 # INTERPRETER
-#######################################
 
 class Interpreter:
   def visit(self, node, context):
@@ -2001,8 +1979,6 @@ class Interpreter:
 
   def no_visit_method(self, node, context):
     raise Exception(f'No visit_{type(node).__name__} method defined')
-
-  ###################################
 
   def visit_NumberNode(self, node, context):
     return RTResult().success(
@@ -2245,9 +2221,7 @@ class Interpreter:
   def visit_BreakNode(self, node, context):
     return RTResult().success_break()
 
-#######################################
 # RUN
-#######################################
 
 global_symbol_table = SymbolTable()
 global_symbol_table.set("bantuan", String.help)
