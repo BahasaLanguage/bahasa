@@ -1,3 +1,5 @@
+![](images/bahasa.png)
+
 # Bahasa
 > 🇮🇩 An Indonesian Programming Language
 
