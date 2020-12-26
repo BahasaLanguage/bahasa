@@ -1,8 +1,16 @@
-<p align="center">
+<p align="left">
   <a href="https://bahasalanguage.github.io">
+    <img src="https://github.com/BahasaLanguage/bahasa/blob/main/images/bahasa.png" width="200" alt="Bahasa">
+    <img src="https://github.com/BahasaLanguage/bahasa/blob/main/images/bahasa.png" width="200" alt="Bahasa">
+    <img src="https://github.com/BahasaLanguage/bahasa/blob/main/images/bahasa.png" width="200" alt="Bahasa">
+    <img src="https://github.com/BahasaLanguage/bahasa/blob/main/images/bahasa.png" width="200" alt="Bahasa">
+    <img src="https://github.com/BahasaLanguage/bahasa/blob/main/images/bahasa.png" width="200" alt="Bahasa">
+    <img src="https://github.com/BahasaLanguage/bahasa/blob/main/images/bahasa.png" width="200" alt="Bahasa">
+    <img src="https://github.com/BahasaLanguage/bahasa/blob/main/images/bahasa.png" width="200" alt="Bahasa">
     <img src="https://github.com/BahasaLanguage/bahasa/blob/main/images/bahasa.png" width="200" alt="Bahasa">
   </a>
 </p>
+
 
 # Bahasa
 > 🇮🇩 An Indonesian Programming Language
