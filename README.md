@@ -1,4 +1,4 @@
-![](images/bahasa.png)
+<img align="center" alt="Bahasa" width="200px" src="https://github.com/BahasaLanguage/bahasa/blob/main/images/bahasa.png" /> <br /> <br />
 
 # Bahasa
 > 🇮🇩 An Indonesian Programming Language
