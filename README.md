@@ -53,6 +53,7 @@ Github	: https://github.com/bahasalanguage
 
 help		type 'help' for help
 bantuan		ketik 'bantuan' untuk bantuan
+keluar()	to quit from Bahasa/untuk keluar dari Bahasa
 
 bahasa > 
 ```
