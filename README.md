@@ -37,7 +37,7 @@ Yb,  88      `8b             IP'`Yb
 
 
 Bahasa, An Indonesian Programming Language
-Copyright(c) 2020 by Jeremy Gautama
+Copyright(c) 2020
 Homepage: https://bahasalanguage.github.io/
 Github	: https://github.com/bahasalanguage
 
